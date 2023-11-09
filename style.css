@@ -112,7 +112,7 @@ nav a:hover{
     border: 1px solid black;
     position:absolute;
     top: 110px;
-   right: 2rem;
+   right: -100%;
     width: 40rem;
     height: 3rem;
     background: #fff;
@@ -122,6 +122,14 @@ nav a:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: .5rem;
     border-radius: 15px;
+    transition: 0.3s linear;
+
+
+}
+
+.search-form.active{
+    right: 2rem;
+    transition: 0.3s linear;
 
 }
 .search-form input {
@@ -153,4 +161,207 @@ nav a:hover{
 }
 .search-form label:hover{
     transform: scale(1.03);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* shopping cart */
+
+.shopping-cart{
+    position: absolute;
+    top: 110px;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width: 20rem;
+    padding: 0 auto;
+    background: #fff;
+    transition: all .4s linear;
+}
+.shopping-items{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    margin: 1rem 0;
+    padding: 10px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.shopping-cart img {
+    height: 4rem;
+    width: 4rem;
+}
+.shopping-cart i {
+    font-size: 1.2rem;
+    position: absolute;
+    right: 2rem;
+    cursor: pointer;
+    color: lightgray;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.cart-content span{
+    font-size: 12px;
+}
+.total{
+    display: flex;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;   */
+      justify-content: center;
+    font-size: 1.2rem;
+    padding: 3px;
+    border-radius: 10px;
+   
+}
+.checkout{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 3px;
+    border-radius: 10px;
+    color: white;
+}
+.checkout:hover {
+    background-color: var(--green);
+}
+.checkout:hover a{
+    color: white;
+
+}
+.shopping-cart.active{
+    right: 2rem;
+    transition: all .4s linear;
+}
+
+/* form */
+.loginBox{
+
+    position: absolute;
+    top: 110px;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width: 20rem;
+    padding: 0 auto;
+    background: #fff;
+    transition: all .4s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.loginBox.active{
+    right: 2rem;
+    transition: all .4s linear;
+
+}
+.loginBox input{
+    width: 100%;
+    height: 1.2rem;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.loginBox input:hover{
+    background-color: orange;
+}
+::placeholder { 
+    color: rgb(163, 153, 155);
+  }
+
+.loginBox{
+
+    padding: 10px;
+    gap: 5px;
+    
+}
+.login-now{
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: unset;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.login-now:hover{
+    color: white;
+    background-color: var(--green);
+}
+
+
+
+/* media query */
+
+@media (max-width:991px){
+    html{
+        font-size: 80%;
+    }
+    header{
+        padding :2rem;
+    }
+
+}
+
+@media (max-width:768px){
+    nav{
+        position: absolute;
+        right: -110%;
+        height: fit-content;
+        transition: all .4s linear;
+
+    }
+    header nav ul{
+        position: absolute;
+        top: 110px;
+        height: fit-content;
+        /* right: 2rem; */
+        border-radius: 0.5rem;
+        background-color: #fff;
+        width: 20rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    }
+    .navbar.active{
+        right: 2rem;
+        transition: all .4s linear;
+
+    }
+    nav ul li{
+        width: 18rem;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        display: flex;
+        justify-content: center;  
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      nav ul li:hover{
+        background-color: orange;
+      }
+    nav a {
+        font-size: 1.5rem;
+        
+        
+
+    }
+    .burger{
+        display: inline-block;
+    }
+}
+
+
+@media (max-width:450px){
+    html{
+        font-size: 75%;
+    }
+}
