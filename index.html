@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocery</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -15,7 +21,7 @@
         <h3 class="title"><a href="">Grocery</a></h3>
       </div>
       <nav class="navbar">
-        <ul >
+        <ul>
           <li>
             <a href="">home</a>
           </li>
@@ -38,79 +44,108 @@
       </nav>
       <div class="cartBox">
         <div class="burger">
-            <i class="fa fa-bars"></i>
+          <i class="fa fa-bars"></i>
         </div>
         <div class="search">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="cart">
-            <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
         </div>
         <div class="user">
-            <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user"></i>
         </div>
       </div>
-      <form  class="search-form">
-        <input type="text" id="search-box" placeholder="Search here....">
+      <form class="search-form">
+        <input type="text" id="search-box" placeholder="Search here...." />
         <label for="search-box" class="fa fa-search"></label>
       </form>
 
       <!-- shopping cart -->
       <div class="shopping-cart">
-
         <!-- shopping-items -->
         <div class="shopping-items">
-            <i class="fa fa-trash"></i>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU" alt="">
-            <div class="cart-content">
-                <h3>watermelon</h3>
-                <span class="price">$4.99/-</span>
-                <span class="qauntity">Qty : 1</span>
-            </div>
+          <i class="fa fa-trash"></i>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU"
+            alt=""
+          />
+          <div class="cart-content">
+            <h3>watermelon</h3>
+            <span class="price">$4.99/-</span>
+            <span class="qauntity">Qty : 1</span>
+          </div>
         </div>
         <div class="shopping-items">
-            <i class="fa fa-trash"></i>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU" alt="">
-            <div class="cart-content">
-                <h3>watermelon</h3>
-                <span class="price">$4.99/-</span>
-                <span class="qauntity">Qty : 1</span>
-            </div>
+          <i class="fa fa-trash"></i>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU"
+            alt=""
+          />
+          <div class="cart-content">
+            <h3>watermelon</h3>
+            <span class="price">$4.99/-</span>
+            <span class="qauntity">Qty : 1</span>
+          </div>
         </div>
         <div class="shopping-items">
-            <i class="fa fa-trash"></i>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU" alt="">
-            <div class="cart-content">
-                <h3>watermelon</h3>
-                <span class="price">$4.99/-</span>
-                <span class="qauntity">Qty : 1</span>
-            </div>
+          <i class="fa fa-trash"></i>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_nyhqYBySL9zG-8ZoFOjaS1SYlmMTP1WtA&usqp=CAU"
+            alt=""
+          />
+          <div class="cart-content">
+            <h3>watermelon</h3>
+            <span class="price">$4.99/-</span>
+            <span class="qauntity">Qty : 1</span>
+          </div>
         </div>
-        
+
         <!-- total div -->
         <div class="total">
-            <span>total : $14.99</span>
+          <span>total : $14.99</span>
         </div>
         <div class="checkout">
-            <a href=""> checkout</a>
+          <a href=""> checkout</a>
         </div>
-
       </div>
       <!-- shopping cart ends here -->
-
-
 
       <!-- login -->
 
       <div class="loginBox">
-
         <h4>LOGIN NOW</h4>
-        
-          <input type="email" placeholder="your email">
-          <br>
-          <input type="password" placeholder="your password">
-          <button class="login-now">Login Now</button>
+
+        <input type="email" placeholder="your email" />
+        <br />
+        <input type="password" placeholder="your password" />
+        <button class="login-now">Login Now</button>
       </div>
     </header>
+
+    <!-- banner -->
+
+    <section>
+      <div class="banner">
+        <h1>Fresh And <span style="color: green;">Organic</span>  Products For You</h1>
+        <p class="banner-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          aliquam fugit nam ipsa molestias fugiat fuga architecto beatae
+          incidunt, 
+        </p>
+        <button class="shopNow-btn">Shop Now</button>
+      </div>
+    </section>
+
+    <!-- products section -->
+
+    <section>
+      <div class="products">
+        <div class="product-heading">
+          <h2>Our <span>Products</span></h2>
+        </div>
+        <div class="products-cards"></div>
+      </div>
+    </section>
   </body>
 </html>

@@ -232,7 +232,9 @@ nav a:hover{
     transition: all .4s linear;
 }
 
-/* form */
+/*                 form                     */
+
+
 .loginBox{
 
     position: absolute;
@@ -295,7 +297,61 @@ nav a:hover{
 
 
 
-/* media query */
+
+/*_______________________Banner section________________*/
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5% auto;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    gap: 2rem;
+
+}
+.banner .banner-desc{
+    font-size: 1rem;
+    text-align: center;
+    width: 60%;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: rgb(97, 92, 92);
+}
+.banner .shopNow-btn{
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+}
+.banner .shopNow-btn:hover{
+    background-color: green;
+    color: white;
+}
+
+/* _____________________products section */
+
+.products{
+    display: flex;
+    justify-content: center;
+    padding: 5rem auto;
+    margin: 5rem auto;
+}
+.product-heading h2{
+    font-size: 3rem;
+}
+.product-heading h2 span{
+    border: 1px solid black;
+    padding: 0.5rem 2rem ;
+    background-color: green;
+    color: white;
+    clip-path: polygon(100% 0 ,93% 50%,100% 99%,0% 100%,7% 50% , 0% 0%);
+}
+
+
+
+/*********************** media query ***************/
 
 @media (max-width:991px){
     *{
@@ -311,10 +367,21 @@ nav a:hover{
         display: flex;
         justify-content: space-around;
     }
+    .banner h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .banner-desc{
+        font-size: 0.1rem;
+    }
+    .banner .shopNow-btn{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+    }
 
 }
 
-/* ipad mini */
+/* __________________________ipad mini */
 
 @media (max-width:768px){
     *{
@@ -391,9 +458,27 @@ nav a:hover{
         right: 6rem;
         transition: 0.3s linear;
     }
+
+
+    /*____________________ banner section */
+
+    .banner h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .banner-desc{
+        font-size: 0.1rem;
+    }
+    .banner .shopNow-btn{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+    }
 }
 
-/* 450 small device */
+
+
+
+/* _______________________ 450 small device */
 @media (max-width:450px){
     html{
         font-size: 75%;
@@ -416,9 +501,30 @@ nav a:hover{
         right: 2rem;
         transition: 0.3s linear;
     }
+
+    /*______ banner section */
+
+
+    .banner h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .banner-desc{
+        font-size: 0.1rem;
+    }
+    .banner .shopNow-btn{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+    }
 }
 @media (max-width:376px){
     .navbar.active{
         right: 10rem;
+    }
+
+
+    /* banner section */
+    .banner-desc{
+        font-size: 10px;
     }
 }
