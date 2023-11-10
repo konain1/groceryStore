@@ -34,10 +34,10 @@ user.addEventListener('click',()=>{
     search_form.classList.remove('active')
     shopping_cart.classList.remove('active')
     navbar.classList.remove('active')
-    loginbox.classList.remove('active')
-
 
     loginbox.classList.toggle('active')
+
+
 })
 
 burger.addEventListener('click',()=>{

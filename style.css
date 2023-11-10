@@ -298,26 +298,41 @@ nav a:hover{
 /* media query */
 
 @media (max-width:991px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
     html{
         font-size: 80%;
     }
     header{
         padding :2rem;
+        display: flex;
+        justify-content: space-around;
     }
 
 }
 
+/* ipad mini */
+
 @media (max-width:768px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
     nav{
         position: absolute;
-        right: -110%;
+        right: -200%;
         height: fit-content;
         transition: all .4s linear;
+        top: 110px;
+
 
     }
     header nav ul{
         position: absolute;
-        top: 110px;
         height: fit-content;
         /* right: 2rem; */
         border-radius: 0.5rem;
@@ -332,11 +347,7 @@ nav a:hover{
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
     }
-    .navbar.active{
-        right: 2rem;
-        transition: all .4s linear;
-
-    }
+    
     nav ul li{
         width: 18rem;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -354,14 +365,60 @@ nav a:hover{
         
 
     }
+    
     .burger{
         display: inline-block;
     }
+    .navbar.active{
+        right: 2rem;
+        transition: all .4s linear;
+
+    }
+    .search-form {
+        width: 80%;
+    }
+    .search-form.active{
+        right: 6rem;
+        transition: 0.3s linear;
+    
+    }
+
+    .shopping-cart.active{
+        right: 6rem;
+        transition: 0.3s linear;
+    }
+    .loginBox.active{
+        right: 6rem;
+        transition: 0.3s linear;
+    }
 }
 
-
+/* 450 small device */
 @media (max-width:450px){
     html{
         font-size: 75%;
+    }
+    .navbar.active{
+        right: 8rem;
+        transition: 0.3s linear;
+    }
+    .search-form.active{
+        right: 1rem;
+        transition: 0.3s linear;
+    
+    }
+
+    .shopping-cart.active{
+        right: 2rem;
+        transition: 0.3s linear;
+    }
+    .loginBox.active{
+        right: 2rem;
+        transition: 0.3s linear;
+    }
+}
+@media (max-width:376px){
+    .navbar.active{
+        right: 10rem;
     }
 }
