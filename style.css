@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -23,6 +23,10 @@ body{
     --shadow:  0 0.5rem 1rem rgba(0,0,0.1);
     --outline: .1rem solid rgba(0,0,0.1);
     --border:2rem solid rgba(0,0,0.1);
+    --cardBG :background-color: #f3f6f9;
+    --descColor :rgb(138, 153, 173);
+    background-image: linear-gradient(62deg, #f3f6f9 0%, #e4e0ec 50%, #ffffff 100%);
+    
 }
 /* hedaer section */
 
@@ -355,32 +359,48 @@ nav a:hover{
 
 .products-cards{
     display:grid;
-    border: 1px solid black;
-    grid-template-columns: repeat(auto-fit,minmax(100px,250px));
+    grid-template-columns: repeat(auto-fit,minmax(100px,280px));
     justify-content: space-evenly;
     margin: 0 auto;
     margin-bottom: 5rem;
-}
+    background-color: #8EC5FC;
+    background: var(--cardBG);
+
+    }
 .card{
-    border: 1px solid;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background-color: #666;
-    margin: 0 auto;
-    padding: 10px 40px;
-
-
+    padding: 2rem 1rem;
+    gap: 1rem;
+    outline: 0.5px solid lightgray;
+    outline-offset: -1rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    gap: 2rem;
+}
+.card:hover{
+    box-shadow: green 0px 15px 25px, green 0px 5px 10px;
 }
 .card .title {
-    font-size: 18px;
-    color: white;
+    font-size: 2rem;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    color: green;
+}
+.cardDesc {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--descColor)
 }
 .card .cardPrice{
-    color: white;
     font-size: 16px;
 }
 .cardposter{
-    width: 80px;
-    height: 80px;
+    width: 60%;
+    height: 200px;
 }
 .cardposter img{
     width: 100%;
@@ -403,6 +423,10 @@ nav a:hover{
         display: flex;
         justify-content: space-around;
     }
+
+
+    /* banner  */
+
     .banner h1{
         font-size: 2rem;
         text-align: center;
@@ -413,6 +437,14 @@ nav a:hover{
     .banner .shopNow-btn{
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
+    }
+
+
+    /* card */
+
+    .card{
+        gap: 2rem;
+        margin: 1rem;
     }
 
 }
