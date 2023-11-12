@@ -194,13 +194,16 @@ nav a:hover{
     height: 4rem;
     width: 4rem;
 }
-.shopping-cart i {
+.trash-btn{
     font-size: 1.2rem;
     position: absolute;
     right: 2rem;
     cursor: pointer;
     color: lightgray;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.trash-btn:hover{
+    color: red;
 }
 .cart-content span{
     font-size: 12px;
@@ -345,12 +348,15 @@ nav a:hover{
 }
 .product-heading h2{
     font-size: 3rem;
+    z-index: -1;
 }
 .product-heading h2 span{
     border: 1px solid black;
     padding: 0.5rem 2rem ;
     background-color: green;
     color: white;
+    z-index: -1;
+
     clip-path: polygon(100% 0 ,93% 50%,100% 99%,0% 100%,7% 50% , 0% 0%);
 }
 
