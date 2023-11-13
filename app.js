@@ -29,6 +29,9 @@ const products = [
 
     },
 ]
+
+
+
 const search_form = document.querySelector('.search-form');
 const search_btn = document.querySelector('.search');
 const shopping_cart = document.querySelector('.shopping-cart');
