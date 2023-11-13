@@ -3,14 +3,17 @@ const products = [
     {
         id:1,
         title:'Nokia',
+        Qty:1,
         price:499,
         poster:"https://images.unsplash.com/photo-1487260211189-670c54da558d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdoaXRlfGVufDB8fDB8fHww",
         desc:'It same work as factory function work but without defining extra object Here is the code read first explanation after it.',
+        
 
     },
     {
         id:2,
         title:'iphone',
+        Qty:1,
         price:699,
         poster:"https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHdoaXRlfGVufDB8fDB8fHww",
         desc:'It same work as factory function work but without defining extra object Here is the code read first explanation after it.',
@@ -19,6 +22,7 @@ const products = [
     {
         id:3,
         title:'samsung',
+        Qty:1,
         price:299,
         poster:"https://images.unsplash.com/photo-1498335746477-0c73d7353a07?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHdoaXRlfGVufDB8fDB8fHww",
         desc:'It same work as factory function work but without defining extra object Here is the code read first explanation after it.',
@@ -37,6 +41,7 @@ const product_Cards = document.querySelector('.products-cards')
 
 // all item are stored here after selecting
 let mapCart = new Map(); 
+let onCartItems = {};
 
 
 
@@ -100,8 +105,14 @@ function boughtIt(pid){
 
             if(!mapCart.has(pid)){
                 mapCart.set(pid,item)
+                onCartItems = item
+                onCartItems.Qty = 1
             }else{
-                mapCart.delete(pid)
+                // mapCart.delete(pid)
+                onCartItems.Qty = onCartItems.Qty+1
+                // onCartItems.price = onCartItems.price * onCartItems.Qty
+                // console.log(item.price *10)
+                mapCart.set(pid,onCartItems)
             }
             
         }
@@ -132,7 +143,7 @@ function shoppingCart(){
     let shopingCost =0
     shopping_cart.innerHTML = ''
     for (let [key, value] of mapCart) {
-        shopingCost = shopingCost + value.price;
+        shopingCost = shopingCost + value.price * value.Qty;
         shopping_cart.innerHTML += `
     <div class="shopping-items">
     <i class="fa fa-trash trash-btn" onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
@@ -143,7 +154,7 @@ function shoppingCart(){
     <div class="cart-content">
       <h3>${value.title}</h3>
       <span class="price">$ ${value.price}-</span>
-      <span class="qauntity">Qty : 1</span>
+      <span class="qauntity">Qty : ${value.Qty}</span>
     </div>
   </div>
 
@@ -157,6 +168,11 @@ function shoppingCart(){
      trash.addEventListener('click',trashFn)
     
 
+    //  for(let k in onCartItems){
+    //     console.log(onCartItems[k])
+    //  }
+
+    console.log(mapCart)
 
     }
 
