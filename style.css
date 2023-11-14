@@ -224,15 +224,13 @@ nav a:hover{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     padding: 3px;
     border-radius: 10px;
-    color: white;
+    color: rgb(52, 44, 44);
 }
 .checkout:hover {
     background-color: var(--green);
-}
-.checkout:hover a{
     color: white;
-
 }
+
 .shopping-cart.active{
     right: 2rem;
     transition: all .4s linear;
@@ -246,7 +244,73 @@ nav a:hover{
     border: 1px solid lightgray;
 }
 
+/* checkout-cart */
 
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    background-color: #776e6e;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+    display: none;
+}
+
+.popup{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+    visibility: hidden;
+}
+.openPopup{
+
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    visibility: visible;
+}
+.close{
+    position: absolute;
+    right: 1rem;
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+}
+
+.closePopup{
+
+   visibility: hidden;
+
+}
+.close:hover{
+    transform: scale(1.2);
+}
+
+.shopingCartitems_popup{
+    width: 100%;
+    margin: 2.5rem auto;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    height: 4rem;
+    align-items: center;
+}
+.shopingCartitems_title{
+    border: 1px solid;
+}
+.shopingCartitems_cost{
+    font-size: 20px;
+}
 
 /* ______________________________ form______   */
 
