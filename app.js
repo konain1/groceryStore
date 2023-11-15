@@ -127,7 +127,6 @@ function boughtIt(pid){
 shoppingCart()
 }
 
-// delete product from cart
 function trashFn(tid) {
     console.log('triggered');
 
@@ -141,41 +140,6 @@ function trashFn(tid) {
     });
 }
 
-// increase product from cart 
-
-function Inc(id){
-    if(mapCart.has(id)){
-        onCartItems = mapCart.get(id)
-
-        onCartItems.Qty = onCartItems.Qty+1
-
-        
-            mapCart.set(id,onCartItems)
-            shoppingCart()
-        
-       
-        
-    }
-}
-
-// decrease product from cart
-function Dec(id){
-    if(mapCart.has(id)){
-        onCartItems = mapCart.get(id)
-        
-        if(onCartItems.Qty > 1){
-            onCartItems.Qty = onCartItems.Qty-1
-
-            mapCart.set(id,onCartItems)
-            shoppingCart()
-        }else{
-            alert('qauntity not less than 1')
-        }
-        
-           
-        
-    }
-}
 
 
 function closePopup(){
@@ -245,7 +209,7 @@ function shoppingCart(){
     <div class="cart-content">
       <h3>${value.title}</h3>
       <span class="price">$ ${value.price}-</span>
-      <span class="qauntity">Qty : <button onClick="Dec(${value.id})" class="decrease">  -  </button>${value.Qty} <button onClick="Inc(${value.id})" class="increase">  +  </button> </span>
+      <span class="qauntity">Qty : ${value.Qty}</span>
     </div>
   </div>
 
@@ -253,11 +217,10 @@ function shoppingCart(){
 
     
     const trash = document.querySelector('.trash-btn')
-     trash.addEventListener('click',trashFn)
-     
 
     
-
+   
+     trash.addEventListener('click',trashFn)
     
 
     //  for(let k in onCartItems){
