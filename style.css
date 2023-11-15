@@ -38,7 +38,7 @@ header{
     width: 100%;
     margin: 0 auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
+    
 }
 
 .logoBox{
@@ -69,6 +69,7 @@ nav{
     height: 100%;
     align-items: center;
     width: 40%;
+   
 
    
 }
@@ -235,7 +236,6 @@ nav a:hover{
     transition: all .4s linear;
 }
 
-<<<<<<< HEAD
 .increase , .decrease{
     border: none;
     cursor: pointer;
@@ -346,8 +346,6 @@ nav a:hover{
     border: 1px solid;
 }
 
-=======
->>>>>>> parent of aef96a8 (increase and decrease product form cart working)
 /* ______________________________ form______   */
 
 

@@ -41,9 +41,6 @@ const loginbox = document.querySelector('.loginBox');
 const navbar = document.querySelector('nav');
 const burger = document.querySelector('.burger');
 const product_Cards = document.querySelector('.products-cards')
-const popup = document.querySelector('.popup')
-const checkoutCart = document.querySelector('.checkout-cart')
-
 
 // all item are stored here after selecting
 let mapCart = new Map(); 
@@ -83,7 +80,8 @@ burger.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-popup.addEventListener('click',popupFn)
+popup.addEventListener('clicl',popupFn)
+
 
 function cards(){
 
@@ -145,45 +143,29 @@ function trashFn(tid) {
 function closePopup(){
     popup.classList.remove('openPopup')
     popup.classList.add('closePopup')
-    alert('close')
 
 }
 function popupFn(){
-   
+
     popup.classList.remove('closePopup')
 
     popup.classList.add('openPopup')
     
-   
-    popup.innerHTML = ''
     for( let [key ,value]of mapCart){
         popup.innerHTML += `
-        <div class="purchase-items">
-        <div class="shopingCartitems_popup" >
-          <i class="fa fa-trash cartTrash " onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
-          
-          <div class="shopingCartitems_title">
-            <h3>${value.title}</h3>
-          </div>
-          <div class="shopingCartitems_cost"> 
-          <span class="price">$ ${value.price}-</span>
-      
-          <span class="qauntity">Qty : <button onClick="Dec(${value.id})" class="decrease">  -  </button>${value.Qty} <button onClick="Inc(${value.id})" class="increase">  +  </button> </span>
-      
-          </div>
-        </div>
+    <div class="shopingCartitems_popup" >
+    <i class="fa fa-trash trash-btn" onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
+    
+    <div class="shopingCartitems_title">
+      <h3>${value.title}</h3>
+    </div>
+    <div class="shopingCartitems_cost"> 
+    <span class="price">$ ${value.price}-</span>
 
-        <div class="totalCost">
-          <h3>total cost</h3>
-          <span>${value.price}</span>
-          <h5>totl items : ${value.price}</h5>
+    <span class="qauntity">Qty : <button onClick="Dec(${value.id})" class="decrease">  -  </button>${value.Qty} <button onClick="Inc(${value.id})" class="increase">  +  </button> </span>
 
-          <div class="buy">Buy</div>
-        </div>
-      </div>
-
-      <h2 class="close" onclick="closePopup()">&times</h2>
-
+    </div>
+  </div>
 
     `;
     }
@@ -200,7 +182,7 @@ function shoppingCart(){
     for (let [key, value] of mapCart) {
         shopingCost = shopingCost + value.price * value.Qty;
         shopping_cart.innerHTML += `
-    <div class="shopping-items" >
+    <div class="shopping-items">
     <i class="fa fa-trash trash-btn" onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
     <img
       src="${value.poster}"
@@ -237,8 +219,8 @@ function shoppingCart(){
     <div class="total">
           <span>total :$ ${shopingCost}</span>
         </div>
-        <div class="checkout" onClick="popupFn()">
-          <span > checkout</span>
+        <div class="checkout">
+          <a href=""> checkout</a>
         </div>
     `
         
