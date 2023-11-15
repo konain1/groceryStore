@@ -83,8 +83,7 @@ burger.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-popup.addEventListener('clicl',popupFn)
-
+popup.addEventListener('click',popupFn)
 
 function cards(){
 
@@ -182,29 +181,45 @@ function Dec(id){
 function closePopup(){
     popup.classList.remove('openPopup')
     popup.classList.add('closePopup')
+    alert('close')
 
 }
 function popupFn(){
-
+   
     popup.classList.remove('closePopup')
 
     popup.classList.add('openPopup')
     
+   
+    popup.innerHTML = ''
     for( let [key ,value]of mapCart){
         popup.innerHTML += `
-    <div class="shopingCartitems_popup" >
-    <i class="fa fa-trash trash-btn" onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
-    
-    <div class="shopingCartitems_title">
-      <h3>${value.title}</h3>
-    </div>
-    <div class="shopingCartitems_cost"> 
-    <span class="price">$ ${value.price}-</span>
+        <div class="purchase-items">
+        <div class="shopingCartitems_popup" >
+          <i class="fa fa-trash cartTrash " onClick="trashFn(${value.id})" data-trashId="${value.id}"></i>
+          
+          <div class="shopingCartitems_title">
+            <h3>${value.title}</h3>
+          </div>
+          <div class="shopingCartitems_cost"> 
+          <span class="price">$ ${value.price}-</span>
+      
+          <span class="qauntity">Qty : <button onClick="Dec(${value.id})" class="decrease">  -  </button>${value.Qty} <button onClick="Inc(${value.id})" class="increase">  +  </button> </span>
+      
+          </div>
+        </div>
 
-    <span class="qauntity">Qty : <button onClick="Dec(${value.id})" class="decrease">  -  </button>${value.Qty} <button onClick="Inc(${value.id})" class="increase">  +  </button> </span>
+        <div class="totalCost">
+          <h3>total cost</h3>
+          <span>${value.price}</span>
+          <h5>totl items : ${value.price}</h5>
 
-    </div>
-  </div>
+          <div class="buy">Buy</div>
+        </div>
+      </div>
+
+      <h2 class="close" onclick="closePopup()">&times</h2>
+
 
     `;
     }
