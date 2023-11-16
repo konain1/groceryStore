@@ -41,6 +41,8 @@ const loginbox = document.querySelector('.loginBox');
 const navbar = document.querySelector('nav');
 const burger = document.querySelector('.burger');
 const product_Cards = document.querySelector('.products-cards')
+const popup = document.querySelector('.popup')
+const checkout = document.querySelector('.checkout')
 
 // all item are stored here after selecting
 let mapCart = new Map(); 
@@ -80,7 +82,7 @@ burger.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-popup.addEventListener('clicl',popupFn)
+checkout.addEventListener('click',popupFn)
 
 
 function cards(){
@@ -126,7 +128,6 @@ shoppingCart()
 }
 
 function trashFn(tid) {
-    console.log('triggered');
 
     products.map((item) => {
         if (tid === item.id) {
@@ -139,17 +140,21 @@ function trashFn(tid) {
 }
 
 
-
+// popup close fn
 function closePopup(){
-    popup.classList.remove('openPopup')
+    // popup.classList.remove('openPopup')
     popup.classList.add('closePopup')
-
+    shoppingCart()
 }
+
+// modal popup
 function popupFn(){
 
-    popup.classList.remove('closePopup')
-
+    
     popup.classList.add('openPopup')
+    // popup.classList.remove('closePopup')
+
+    popup.innerHTML = ''
     
     for( let [key ,value]of mapCart){
         popup.innerHTML += `
@@ -166,11 +171,48 @@ function popupFn(){
 
     </div>
   </div>
+  <h2 class="close" onClick="closePopup()" >&times</h2>
+
 
     `;
     }
 
 
+}
+
+// increse product cart
+function Inc(id){
+    if(mapCart.has(id)){
+        onCartItems = mapCart.get(id)
+
+        onCartItems.Qty = onCartItems.Qty+1
+
+
+            mapCart.set(id,onCartItems)
+            shoppingCart()
+
+
+
+    }
+}
+
+// decrease product from cart
+function Dec(id){
+    if(mapCart.has(id)){
+        onCartItems = mapCart.get(id)
+
+        if(onCartItems.Qty > 1){
+            onCartItems.Qty = onCartItems.Qty-1
+
+            mapCart.set(id,onCartItems)
+            shoppingCart()
+        }else{
+            alert('qauntity not less than 1')
+        }
+
+
+
+    }
 }
 
 function shoppingCart(){
@@ -191,42 +233,31 @@ function shoppingCart(){
     <div class="cart-content">
       <h3>${value.title}</h3>
       <span class="price">$ ${value.price}-</span>
-      <span class="qauntity">Qty : ${value.Qty}</span>
+      <span  class="qauntity">  Qty : <span class="decrease" onClick="Dec(${value.id})">-</span> ${value.Qty} <span class="increase"  onClick="Inc(${value.id})">+</span> </span>
     </div>
   </div>
-
-    `;
-
-    
+  `;
     const trash = document.querySelector('.trash-btn')
-
-    
-   
      trash.addEventListener('click',trashFn)
-    
-
-    //  for(let k in onCartItems){
-    //     console.log(onCartItems[k])
-    //  }
-
-    console.log(mapCart)
 
     }
 
+        shopping_cart.innerHTML += `
 
-    shopping_cart.innerHTML += `
-
-    <div class="total">
-          <span>total :$ ${shopingCost}</span>
-        </div>
-        <div class="checkout">
-          <a href=""> checkout</a>
-        </div>
-    `
+        <div class="total">
+              <span>total :$ ${shopingCost}</span>
+            </div>
+            <div class="checkout" onClick="popupFn()">
+              <h4 href=""> checkout</h4>
+            </div>
+        `
+    
+   
         
     
    
 }
+
 
 
 

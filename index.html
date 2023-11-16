@@ -86,8 +86,8 @@
         <div class="total">
           <span>total : $ 0</span>
         </div>
-        <div class="checkout">
-          <a href=""> checkout</a>
+        <div class="checkout" onClick="popupFn()">
+          <h4 href=""> checkout</h4>
         </div>
       </div>
       <!-- shopping cart ends here -->
@@ -150,10 +150,20 @@
 
    <!-- POPUP MODAL -->
     
-   <section>
+   <section class="popupParent">
     <div class="popup" >
+
+      <div class="cartItems">
+        <div class="shoppedItem">
+          <img src="" alt="" class="shoppedItemImg">
+          <span class="shoppedItemTitle">${value.title}</span>
+          <span class="shooppedPrice">$ ${value.price}</span>
+          <span>QTY : ${value.Qty}</span> 
+          <i class="fa fa-trash"></i>
+        </div>
+      </div>
       
-      <h2 class="close" onclick="closePopup()">&times</h2>
+      <h2 class="close" onClick="closePopup()">&times</h2>
     </div>
    </section>
 
