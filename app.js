@@ -82,8 +82,15 @@ burger.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-checkout.addEventListener('click',popupFn)
 
+
+checkout.addEventListener('click', handleCheckoutClick);
+
+
+function handleCheckoutClick() {
+    popupFn();
+    checkout.removeEventListener('click', handleCheckoutClick); // Remove the event listener
+}
 
 function cards(){
 
@@ -247,7 +254,7 @@ function shoppingCart(){
         <div class="total">
               <span>total :$ ${shopingCost}</span>
             </div>
-            <div class="checkout" onClick="popupFn()">
+            <div class="checkout" onClick="handleCheckoutClick()">
               <h4 href=""> checkout</h4>
             </div>
         `
