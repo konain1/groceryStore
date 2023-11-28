@@ -88,8 +88,9 @@ checkout.addEventListener('click', handleCheckoutClick);
 
 
 function handleCheckoutClick() {
+    console.log('inside');
     popupFn();
-    checkout.removeEventListener('click', handleCheckoutClick); // Remove the event listener
+    // checkout.removeEventListener('click', handleCheckoutClick); // Remove the event listener
 }
 
 function cards(){
@@ -157,10 +158,10 @@ function closePopup(){
 // modal popup
 function popupFn(){
 
-    
+    popup.classList.remove('closePopup')
     popup.classList.add('openPopup')
-    // popup.classList.remove('closePopup')
-
+    
+    console.log(popup);
     popup.innerHTML = ''
     
     for( let [key ,value]of mapCart){
